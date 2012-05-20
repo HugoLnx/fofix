@@ -4405,33 +4405,6 @@ class GuitarScene(Scene):
 
     pos = self.getSongPosition()
 
-    #if not self.instruments[num].startPick(self.song, pos, self.controls):
-    #  self.song.setInstrumentVolume(0.0, self.playerList[num].part)
-    #  if self.whammyEffect == 1:    #pitchbend
-    #    self.song.resetInstrumentPitch(self.playerList[num].part)
-    #  scoreCard.streak = 0
-    #  if self.coOpType:
-    #    self.scoring[num].streak = 0
-    #    self.scoring[num].endingStreakBroken = True
-    #  self.instruments[num].setMultiplier(1)
-    #  self.currentlyAnimating = False
-    #  self.stage.triggerMiss(pos)
-    #  self.guitarSoloBroken[num] = True
-    #  scoreCard.endingStreakBroken = True   #MFH
-    #  self.notesMissed[num] = True #QQstarS:Set [0] to [i]
-
-    #  isFirst = True
-    #  noteList = self.instruments[num].matchingNotes
-    #  for tym, noat in noteList:
-    #    if (noat.star or noat.finalStar) and isFirst:
-    #      self.starNotesMissed[num] = True
-    #    isFirst = False
-
-    #  self.screwUp(num, self.controls) #MFH - call screw-up sound handling function
-
-    #  #myfingershurt: ensure accuracy display off when miss
-    #  self.dispAccuracy[num] = False
-
     if self.coOpType:
       scoreCard = self.coOpScoreCard
     else:
