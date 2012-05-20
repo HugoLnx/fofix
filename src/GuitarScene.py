@@ -57,6 +57,8 @@ from OpenGL.GL import *
 
 from math import degrees, atan
 
+ROCK_DECREASE_SPEED = 6
+
 class GuitarScene(Scene):
   def __init__(self, engine, libraryName, songName):
     Scene.__init__(self, engine)
@@ -3187,6 +3189,8 @@ class GuitarScene(Scene):
       if (self.rock[i]/self.rockMax <= 0.667) and ((self.rock[i]+rockMinusAmount)/self.rockMax > 0.667): #akedrou
         self.playersInGreen -= 1
 
+      self.rock[i] -= rockMinusAmount * (ROCK_DECREASE_SPEED-1)
+
     if self.minusRock[i] <= self.minBase:
       self.minusRock[i] = self.minBase
     if self.plusRock[i] <= self.pluBase:
@@ -4591,7 +4595,7 @@ class GuitarScene(Scene):
       
       if ApplyPenalty == True:
         self.currentlyAnimating = False
-        self.instruments[num].hopoActive = 0
+        self.instruments[num].hopoActive = 1
         self.instruments[num].wasLastNoteHopod = False
         self.instruments[num].sameNoteHopoString = False
         self.instruments[num].hopoProblemNoteNum = -1
