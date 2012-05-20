@@ -1665,10 +1665,13 @@ class NoteTrack(Track):   #MFH - special Track type for note events, with markin
     
     for time, event in self.allEvents:
       if isinstance(event, Tempo):
-        bpmNotes.append([time, event])
+        hopoNotes.append([time, event]);
+        event.tappable = 2
         continue
       if not isinstance(event, Note):
         continue
+      hopoNotes.append([time, event]);
+      event.tappable = 2
 
 
       

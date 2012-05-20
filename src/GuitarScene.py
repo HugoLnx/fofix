@@ -5042,6 +5042,7 @@ class GuitarScene(Scene):
       pressed = -1
 
     for i in range(self.numOfPlayers): #akedrou- probably loopable...
+      self.instruments[i].hopoActive = 1  
       if control in self.instruments[i].keys and numpressed[i] >= 1:
         if self.instruments[i].hopoActive > 0 or (self.instruments[i].wasLastNoteHopod and self.instruments[i].hopoActive == 0):
           if not pullOff and (self.hopoStyle == 2 or self.hopoStyle == 3): #GH2 or GH2 Strict, don't allow lower-fret tapping while holding a higher fret
@@ -5069,7 +5070,7 @@ class GuitarScene(Scene):
     if pressed >= 0:
       #myfingershurt:
 
-      self.handlePick(pressed, hopo = hopo, pullOff = pullOff)
+      self.handlePick(pressed, hopo = True, pullOff = pullOff)
     
     if control in Player.starts:
       if self.ending == True:

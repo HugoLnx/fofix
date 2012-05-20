@@ -407,8 +407,8 @@ class Instrument(object):
     get = lambda file: self.checkPath("flames", file)
 
     self.HCount         = 0
-    self.HFrameLimit	= self.engine.theme.HoldFlameFrameLimit
-    self.HFrameLimit2	= self.engine.theme.HitFlameFrameLimit
+    self.HFrameLimit  = self.engine.theme.HoldFlameFrameLimit
+    self.HFrameLimit2 = self.engine.theme.HitFlameFrameLimit
     self.HCountAni      = False
     
     if self.disableFretSFX != False:
@@ -1727,7 +1727,7 @@ class Instrument(object):
 
     else: #normal colors
       tailcol = (color)
-	  
+    
 
     if length > self.boardLength:
       s = self.boardLength
